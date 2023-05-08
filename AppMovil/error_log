@@ -1,0 +1,66 @@
+[10-Nov-2022 01:56:56 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 5
+[10-Nov-2022 01:57:17 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 5
+[10-Nov-2022 01:57:29 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 5
+[10-Nov-2022 01:57:34 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 5
+[10-Nov-2022 01:57:57 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 5
+[10-Nov-2022 01:58:38 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 5
+[10-Nov-2022 01:59:56 America/Mexico_City] PHP Warning:  Use of undefined constant row - assumed 'row' (this will throw an Error in a future version of PHP) in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 9
+[10-Nov-2022 01:59:56 America/Mexico_City] PHP Warning:  Illegal string offset 'IDViaje' in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 9
+[10-Nov-2022 01:59:56 America/Mexico_City] PHP Warning:  Use of undefined constant row - assumed 'row' (this will throw an Error in a future version of PHP) in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 10
+[10-Nov-2022 01:59:56 America/Mexico_City] PHP Warning:  Illegal string offset 'Destino' in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 10
+[10-Nov-2022 01:59:56 America/Mexico_City] PHP Warning:  Use of undefined constant row - assumed 'row' (this will throw an Error in a future version of PHP) in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 11
+[10-Nov-2022 01:59:56 America/Mexico_City] PHP Warning:  Illegal string offset 'Fecha' in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 11
+[10-Nov-2022 01:59:56 America/Mexico_City] PHP Warning:  Use of undefined constant row - assumed 'row' (this will throw an Error in a future version of PHP) in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 12
+[10-Nov-2022 01:59:56 America/Mexico_City] PHP Warning:  Illegal string offset 'HoraSalida' in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 12
+[10-Nov-2022 02:00:19 America/Mexico_City] PHP Warning:  Use of undefined constant row - assumed 'row' (this will throw an Error in a future version of PHP) in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 9
+[10-Nov-2022 02:00:19 America/Mexico_City] PHP Warning:  Illegal string offset 'IDViaje' in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 9
+[10-Nov-2022 02:00:19 America/Mexico_City] PHP Warning:  Use of undefined constant row - assumed 'row' (this will throw an Error in a future version of PHP) in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 10
+[10-Nov-2022 02:00:19 America/Mexico_City] PHP Warning:  Illegal string offset 'Destino' in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 10
+[10-Nov-2022 02:00:19 America/Mexico_City] PHP Warning:  Use of undefined constant row - assumed 'row' (this will throw an Error in a future version of PHP) in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 11
+[10-Nov-2022 02:00:19 America/Mexico_City] PHP Warning:  Illegal string offset 'Fecha' in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 11
+[10-Nov-2022 02:00:19 America/Mexico_City] PHP Warning:  Use of undefined constant row - assumed 'row' (this will throw an Error in a future version of PHP) in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 12
+[10-Nov-2022 02:00:19 America/Mexico_City] PHP Warning:  Illegal string offset 'HoraSalida' in /home1/ecotecca/public_html/AppMovil/MostrarDatos.php on line 12
+[11-Nov-2022 02:59:40 America/Mexico_City] PHP Warning:  array_map() expects parameter 1 to be a valid callback, function 'utf9_encode' not found or invalid function name in /home1/ecotecca/public_html/AppMovil/Buscar.php on line 10
+[11-Nov-2022 02:59:44 America/Mexico_City] PHP Warning:  array_map() expects parameter 1 to be a valid callback, function 'utf9_encode' not found or invalid function name in /home1/ecotecca/public_html/AppMovil/Buscar.php on line 10
+[11-Nov-2022 03:00:49 America/Mexico_City] PHP Warning:  array_map() expects parameter 1 to be a valid callback, function 'utf9_encode' not found or invalid function name in /home1/ecotecca/public_html/AppMovil/Buscar.php on line 10
+[11-Nov-2022 03:00:51 America/Mexico_City] PHP Warning:  array_map() expects parameter 1 to be a valid callback, function 'utf9_encode' not found or invalid function name in /home1/ecotecca/public_html/AppMovil/Buscar.php on line 10
+[02-Dec-2022 17:40:43 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[02-Dec-2022 18:53:15 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[02-Dec-2022 18:56:31 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[02-Dec-2022 18:59:58 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[02-Dec-2022 19:07:21 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[02-Dec-2022 19:10:39 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[02-Dec-2022 19:12:50 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[02-Dec-2022 19:27:05 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[02-Dec-2022 19:29:42 America/Mexico_City] PHP Warning:  Undefined variable $viaje in /home1/ecotecca/public_html/AppMovil/Buscar.php on line 12
+[02-Dec-2022 19:30:12 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[02-Dec-2022 19:30:38 America/Mexico_City] PHP Warning:  Undefined variable $viaje in /home1/ecotecca/public_html/AppMovil/Buscar.php on line 12
+[03-Dec-2022 14:56:05 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[03-Dec-2022 15:05:33 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[03-Dec-2022 15:10:44 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[03-Dec-2022 15:15:16 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[03-Dec-2022 15:18:31 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[03-Dec-2022 15:24:02 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[03-Dec-2022 15:25:46 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[03-Dec-2022 15:33:08 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[03-Dec-2022 15:34:40 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[03-Dec-2022 15:40:20 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
+[05-Dec-2022 00:17:38 America/Mexico_City] PHP Warning:  Array to string conversion in /home1/ecotecca/public_html/AppMovil/MostrarUsuarios.php on line 6
