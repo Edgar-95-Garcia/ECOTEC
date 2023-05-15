@@ -131,6 +131,7 @@ if (!isset($GLOBALS['menu'])) {
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" aling="center" href="./admon_administrar_superusuario_modificar.php">SUPERUSUARIO</a>
                             <a class="dropdown-item" aling="center" href="./admon_administrar_pass.php">CONTRASEÑA DE REGISTRO</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_bolsa_trabajo.php">PANEL BOLSA DE TRABAJO</a>
                             <a class="dropdown-item" aling="center" href="./admon_administrar_noticias_panel.php">PANEL DE NOTICIAS</a>
                             <a class="dropdown-item" aling="center" href="./admon_administrar_noticias.php">BANNER DE NOTICIAS</a>
                             <a class="dropdown-item" aling="center" href="./admon_administrar_apariencia.php">APARIENCIA DE PÁGINA</a>
