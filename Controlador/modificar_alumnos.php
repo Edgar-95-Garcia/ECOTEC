@@ -59,11 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['admin_ecotec'])) {
             echo "<p style='color:red'>*Ingresa contraseña</p>";
             $flag = false;
         }
-        if (!isset(($status))) {
+        if (!isset($status)) {
             echo "<p style='color:red'>*Ingresa estatus</p>";
             $flag = false;
         }
-        if (!isset(($level))) {
+        if (!isset($level)) {
             echo "<p style='color:red'>*Ingresa nivel de usuario</p>";
             $flag = false;
         }
