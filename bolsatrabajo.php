@@ -22,7 +22,6 @@ include_once("./cabecera.php");
                 <center>
                     <br>
                     <br><?php echo $k->dec($datos['DESCRIPCION']) ?></br>
-                    <br><?php echo ($datos['VACANTES']) ?></br>
                     <br><?php echo $k->dec($datos['FECHA_PUBLICACION']) ?></br>
                     <br><?php echo ($datos['DISPONIBILIDAD'] == 1) ? 'Vacante disponible':'Vacante ya no está disponible' ?></br>
                 </br>
@@ -42,7 +41,6 @@ include_once("./cabecera.php");
                 <center>
                 <br>
                     <br><?php echo $k->dec($datos['DESCRIPCION']) ?></br>
-                    <br><?php echo ($datos['VACANTES']) ?></br>
                     <br><?php echo $k->dec($datos['FECHA_PUBLICACION']) ?></br>
                     <br><?php echo ($datos['DISPONIBILIDAD'] == 1) ? 'Vacante disponible':'Vacante ya no está disponible' ?></br>
                     </br>

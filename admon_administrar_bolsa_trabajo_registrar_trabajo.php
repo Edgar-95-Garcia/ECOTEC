@@ -28,12 +28,10 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
                                 <input type="text" id="titulo" name="titulo"><br><br>
                                 <label for="descripcion">Ingresa una descripción para la nueva vacante</label><br>
                                 <textarea name="descripcion" id="descripcion" cols="50" rows="3"></textarea><br>
-                                <label for="vacantes">Ingresa el número de vacantes disponibles</label><br>
-                                <input type="text" id="vacantes" name="vacantes"><br><br>
                                 <label for="FILE">Agrega una imagen/foto que se va a mostrar junto con la vacante <br><i>(La foto no debe de pesar más de 3 Megabytes)</i><br></label>
                                 <input type="file" class="form-control-file" id="FILE" name="img">
                             </div>
-                            <?php include("./Controlador/registro_panel_noticia.php"); ?>
+                            <?php include("./Controlador/registro_panel_bolsa_trabajo.php"); ?>
                             <input type="submit" class="btn btn-success" style="width: 60%;" value="REGISTRAR" name="registrar_panel_noticia">
                             <br></br>
                             <a href="./admon_administrar_bolsa_trabajo.php"> <input class="btn btn-success" style="width: 60%;" type="button" value="REGRESAR"></a>

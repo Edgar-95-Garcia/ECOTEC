@@ -60,30 +60,30 @@ if (!isset($GLOBALS['menu'])) {
         <div class="collapse navbar-collapse" id="colNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item <?php if ($GLOBALS['menu'] == 'index') echo 'active'; ?>">
-                    <a class="nav-link" aling="center" href="./index.php">INICIO</a>
+                    <a class="nav-link" aling="center" href="./index.php">Inicio</a>
                 </li>
                 <li class="nav-item <?php if ($GLOBALS['menu'] == 'BOLSA DE TRABAJO') echo 'active'; ?>">
-                    <a class="nav-link" aling="center" href="./bolsatrabajo.php">BOLSA DE TRABAJO</a>
+                    <a class="nav-link" aling="center" href="./bolsatrabajo.php">AnunciaTec</a>
                 </li>
                 <?php
                 if (isset($_SESSION["user"]) || isset($_SESSION["admin"])) {
                 ?>
                     <li class="nav-item <?php if ($GLOBALS['menu'] == 'talleres/horarios') echo 'active'; ?>">
-                        <a class="nav-link" aling="center" href="./alumnos_talleres.php">TALLERES DISPONIBLES</a>
+                        <a class="nav-link" aling="center" href="./alumnos_talleres.php">Talleres disponibles</a>
                     </li>
                 <?php
                 }
                 if (isset($_SESSION["user"]) && !isset($_SESSION["admin"])) {
                 ?>
                     <li class="nav-item <?php if ($GLOBALS['menu'] == 'talleres_registrados') echo 'active'; ?>">
-                        <a class="nav-link" aling="center" href="./alumnos_talleres_registrados.php">TALLERES REGISTRADOS</a>
+                        <a class="nav-link" aling="center" href="./alumnos_talleres_registrados.php">Talleres registrados</a>
                     </li>
                 <?php
                 }
                 if (isset($_SESSION["admin"])) {
                 ?>
                     <li class="nav-item <?php if ($GLOBALS['menu'] == 'administrar_talleres') echo 'active'; ?>">
-                        <a class="nav-link" aling="center" href="./administrar_talleres.php">ADMINISTRAR TALLERES</a>
+                        <a class="nav-link" aling="center" href="./administrar_talleres.php">Administrar talleres</a>
                     </li>
                 <?php
                 }
@@ -92,7 +92,7 @@ if (!isset($GLOBALS['menu'])) {
                 if (isset($_SESSION["admin_ecotec"])) {
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" aling="center" href="./RIDEECOTEC.php">RIDEECOTEC</a>
+                        <a class="nav-link" aling="center" href="./RIDEECOTEC.php">RideEcotec</a>
                     </li>
                 <?php
                 }
@@ -100,14 +100,14 @@ if (!isset($GLOBALS['menu'])) {
                 <li class="nav-item <?php if ($GLOBALS['menu'] == 'ENTRAR') echo 'active'; ?>">
                     <?php
                     if (!isset($_SESSION["user"])  && !isset($_SESSION["admin_ecotec"])) {
-                        echo '<a class="nav-link" href="./login.php">ENTRAR</a>';
+                        echo '<a class="nav-link" href="./login.php">Entrar</a>';
                     }
                     ?>
                 </li>
                 <li class="nav-item <?php if ($GLOBALS['menu'] == 'registro') echo 'active'; ?>">
                     <?php
                     if (!isset($_SESSION["user"]) && !isset($_SESSION["admin_ecotec"])) {
-                        echo '<a class="nav-link" href="./register.php">REGISTRARSE</a>';
+                        echo '<a class="nav-link" href="./register.php">Registrarse</a>';
                     }
                     ?>
                 </li>
@@ -116,25 +116,25 @@ if (!isset($GLOBALS['menu'])) {
                 ?>
                     <li class="nav-item dropdown <?php if ($GLOBALS['menu'] == 'admon') echo 'active'; ?>">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ADMINISTRACIÓN
+                            Administración
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_profesores.php">ADMINISTRAR PROFESORES</a>
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_alumnos.php">ADMINISTRAR ALUMNOS</a>
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_talleres.php">ADMINISTRAR TALLERES</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_profesores.php">Administrar profesores</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_alumnos.php">Administrar alumno</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_talleres.php">Administrar talleres</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown <?php if ($GLOBALS['menu'] == 'prson') echo 'active'; ?>">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            PERSONALIZACIÓN
+                            Personalización
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_superusuario_modificar.php">SUPERUSUARIO</a>
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_pass.php">CONTRASEÑA DE REGISTRO</a>
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_bolsa_trabajo.php">PANEL BOLSA DE TRABAJO</a>
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_noticias_panel.php">PANEL DE NOTICIAS</a>
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_noticias.php">BANNER DE NOTICIAS</a>
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_apariencia.php">APARIENCIA DE PÁGINA</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_superusuario_modificar.php">Superusuario</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_pass.php">Contraseña de registro</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_bolsa_trabajo.php">AnunciaTec</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_noticias_panel.php">Panel de noticias</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_noticias.php">Banner de noticias</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_apariencia.php">Apariencia de página</a>
                         </div>
                     </li>
                 <?php
@@ -143,7 +143,7 @@ if (!isset($GLOBALS['menu'])) {
                 <li>
                     <?php
                     if (isset($_SESSION["user"])  || isset($_SESSION["admin_ecotec"])) {
-                        echo '<a class="nav-link" href="index.php?t=0">CERRAR SESIÓN</a>';
+                        echo '<a class="nav-link" href="index.php?t=0">Cerrar sesión</a>';
                     }
                     ?>
                 </li>

@@ -3,7 +3,7 @@
 class Insertar_usuario
 {
 
-    function addUser($nombres, $a_p, $a_m, $matricula, $tel_contacto, $correo, $pass)
+    function addUser($nombres, $a_p, $a_m, $matricula, $tel_contacto, $pass)
     {
         include_once("./Controlador/key.php");
         $k = new key();
@@ -22,7 +22,7 @@ class Insertar_usuario
         */
         $hash = (md5(rand(0, 1000)));
         $to = $correo;
-        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), $k->enc($matricula), $k->enc($tel_contacto), $k->enc(strtolower($correo)), $k->enc($pass), $k->enc($hash), 1, 1, $k->enc($fecha));
+        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), $k->enc($matricula), $k->enc($tel_contacto), $k->enc($pass), $k->enc($hash), 1, 1, $k->enc($fecha));
         /* 
         if ($this->mensaje_activacion($user, $correo, $k, $hash, $to) != 1) {
             //correo no envíado, no se realiza registro en base de datos
@@ -30,11 +30,11 @@ class Insertar_usuario
             //correo envíado, se realiza registro en base de datos
         }
         */
-        $temp = $this->registro_usuario($data, $k->enc($correo));
+        $temp = $this->registro_usuario($data);
         return $temp;
     }
 
-    function addUserAdmin($nombres, $a_p, $a_m, $matricula, $tel_contacto, $correo, $pass)
+    function addUserAdmin($nombres, $a_p, $a_m, $matricula, $tel_contacto, $pass)
     {
         include_once("./Controlador/key.php");
         $k = new key();
@@ -54,7 +54,7 @@ class Insertar_usuario
         */
         $hash = (md5(rand(0, 1000)));
         $to = $correo;
-        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), null, $k->enc($tel_contacto), $k->enc($correo), $k->enc($pass), $k->enc($hash), 1, 0, $k->enc($fecha));
+        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), null, $k->enc($tel_contacto), $k->enc($pass), $k->enc($hash), 1, 0, $k->enc($fecha));
         /* 
         if ($this->mensaje_activacion($user, $correo, $k, $hash, $to) != 1) {
             //correo no envíado, no se realiza registro en base de datos
@@ -62,7 +62,7 @@ class Insertar_usuario
             //correo envíado, se realiza registro en base de datos
         }
         */
-        $temp = $this->registro_usuario($data, $k->enc($correo));
+        $temp = $this->registro_usuario($data);
         return $temp;
     }
 
@@ -91,21 +91,20 @@ class Insertar_usuario
         }
         return $success;
     }
-    function registro_usuario($data, $correo)
+    function registro_usuario($data)
     {
         $temp = 0;
         try {
             include_once("./Modelo/conect.php");
             $mysql_object = new conect();
-            $statementHandle = $mysql_object->connect()->prepare("SELECT CORREO FROM usuarios WHERE CORREO = '" . $correo . "'");
-            $statementHandle->execute();
-            $repetidos = $statementHandle->fetchAll();
+            
+            $repetidos = null;
             if ($repetidos == null) {
-                $statementHandle = $mysql_object->connect()->prepare("INSERT INTO usuarios(ID_USUARIO, NOMBRES, APELLIDO_PATERNO, APELLIDO_MATERNO, MATRICULA, TEL_CONTACTO, CORREO, PASS, HASH, STATUS, LEVEL,FECHA_REGISTRO) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
-                $statementHandle->execute($data);
+                $statementHandle = $mysql_object->connect()->prepare("INSERT INTO usuarios(ID_USUARIO, NOMBRES, APELLIDO_PATERNO, APELLIDO_MATERNO, MATRICULA, TEL_CONTACTO, PASS, HASH, STATUS, LEVEL,FECHA_REGISTRO) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+                $statementHandle->execute($data);                
                 $temp = 1; #todo ha sido correcto
             } else {
-                $temp = 4; //correo ya existe
+                $temp = 4; 
             }
         } catch (PDOException $e) {
             $temp = 3; #otro tipo de error

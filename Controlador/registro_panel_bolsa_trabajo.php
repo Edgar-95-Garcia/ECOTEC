@@ -18,14 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST["descripcion"])) {
             $descripcion = htmlentities($_POST["descripcion"]);
         }
-        if (isset($_POST["vacantes"])) {
-            $vacantes = htmlentities($_POST["vacantes"]);
-            try{
-                $vacantes = intval($_POST["vacantes"]);
-            }catch(Exception $e){
-                $flag = false;    
-            }
-        }
         //verificar las variables de los campos que son obligatorios ----------------------------------------
         if (empty($titulo)) {
             echo "<p style='color:red'>*Ingresa el titulo de la vacante</p>";
@@ -35,20 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<p style='color:red'>*Ingresa la descripcion de la vacante</p>";
             $flag = false;
         }
-        if (empty($vacantes)) {
-            echo "<p style='color:red'>*Ingresa el número de vacantes disponibles</p>";
-            $flag = false;
-        }
-        if (!is_int($vacantes)) {
-            echo "<p style='color:red'>*Ingresa un número entero en el campo de vacantes disponibles</p>";
-            $flag = false;
-        }
 
         //se verifica que todos los datos hayan sido ingresados correctamente y por lo tanto que la bandera sea TRUE
         if ($flag == true) {
             include_once("./Modelo/Trabajo/Insertar_trabajo.php");
             $insertar = new Insertar_trabajo();
-            $a = $insertar->add_trabajo($titulo,$descripcion,$binariosImagen,$vacantes);
+            $a = $insertar->add_trabajo($titulo,$descripcion,$binariosImagen);
             if ($a == 1) {
                 echo '<script type="text/javascript">alert("Vacante registrada exitosamente");</script>';
 ?>

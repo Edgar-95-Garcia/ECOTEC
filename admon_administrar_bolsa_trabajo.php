@@ -33,7 +33,6 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
                                     <th>IMAGEN</th>
                                     <th>TITULO</th>
                                     <th>DESCRIPCION</th>
-                                    <th>VACANTES</th>
                                     <th>FECHA DE PUBLICACIÓN</th>
                                     <th>DISPONIBILIDAD</th>
                                     <th>ACCIONES</th>
@@ -59,9 +58,6 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
                                             </td>
                                             <td>
                                                 <?php echo $k->dec($datos['DESCRIPCION']); ?>
-                                            </td>
-                                            <td>
-                                                <?php echo ($datos['VACANTES']); ?>
                                             </td>
                                             <td>
                                                 <?php echo $k->dec($datos['FECHA_PUBLICACION']); ?>
