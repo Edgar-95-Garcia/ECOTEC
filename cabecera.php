@@ -7,6 +7,7 @@ if (!isset($GLOBALS['menu'])) {
     $GLOBALS['menu'] = 'index';
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +64,7 @@ if (!isset($GLOBALS['menu'])) {
                     <a class="nav-link" aling="center" href="./index.php">Inicio</a>
                 </li>
                 <li class="nav-item <?php if ($GLOBALS['menu'] == 'BOLSA DE TRABAJO') echo 'active'; ?>">
-                    <a class="nav-link" aling="center" href="./bolsatrabajo.php">AnunciaTec</a>
+                    <a class="nav-link" aling="center" href="./anunciaTec.php">AnunciaTec</a>
                 </li>
                 <?php
                 if (isset($_SESSION["user"]) || isset($_SESSION["admin"])) {

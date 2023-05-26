@@ -16,11 +16,11 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
     $sesion = $k->dec($_GET["u"]); //id_sesion
     if ($_SESSION["admin_ecotec"] == $sesion) {
         include_once("../Modelo/Trabajo/Borrar_trabajo.php");
-        $obj_vacante = new Borrar_trabajo();
-        if ($obj_vacante->deleteVacante($id) == 1) {
-            echo '<script type="text/javascript">alert("Vacante borrada satisfactoriamente");</script>';
+        $obj_anuncio = new Borrar_trabajo();
+        if ($obj_anuncio->deleteAnuncio($id) == 1) {
+            echo '<script type="text/javascript">alert("Anuncio borrado satisfactoriamente");</script>';
         } else {
-            echo '<script type="text/javascript">alert("Vacante no ha sido borrado, reintente en unos minutos");</script>';
+            echo '<script type="text/javascript">alert("Anuncio no ha sido borrado, reintente en unos minutos");</script>';
         }
         ?>
             <script>

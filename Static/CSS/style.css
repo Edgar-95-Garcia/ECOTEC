@@ -149,3 +149,19 @@ h1 {
         margin-left: 0;
     }
 }
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card-img-top {
+    width: 100%;
+    /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: 350px;
+    /* Establece una altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Ajusta la imagen para que cubra todo el espacio sin distorsión */
+}

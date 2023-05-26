@@ -25,7 +25,7 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
                     <form method="POST" enctype="multipart/form-data">
                         <div class="card">
                             <font size="6" face="Cooper Black" color="#3CA43C">
-                                <h5 class="card-header">Formulario para modificar la vacante con titulo <?php echo $k->dec($vacante['TITULO']) ?>
+                                <h5 class="card-header">Formulario para modificar el anuncio con titulo <?php echo $k->dec($vacante['TITULO']) ?>
                                 </h5>
                             </font>
                             <div class="card-body">
@@ -33,13 +33,12 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
                                     <p class="card-text">
                                     <div class="form-group">
                                         <input type="hidden" name="id_vacante" id="id_vacante" value="<?php echo $vacante['ID'] ?>">
-                                        <label for="titulo">Ingresa un titulo para la nueva vacante</label><br>
+                                        <label for="titulo">Ingresa un titulo para el anuncio</label><br>
                                         <input type="text" id="titulo" name="titulo" value="<?php echo $k->dec($vacante['TITULO']) ?>"><br><br>
-                                        <label for="descripcion">Ingresa una descripción para la nueva vacante</label><br>
+                                        <label for="descripcion">Ingresa una descripción para el anuncio</label><br>
                                         <textarea name="descripcion" id="descripcion" cols="50" rows="3"><?php echo $k->dec($vacante['DESCRIPCION']) ?></textarea><br>
-                                        <label for="vacantes">Ingresa el número de vacantes disponibles</label><br>
-                                        <input type="text" id="vacantes" name="vacantes" value="<?php echo ($vacante['VACANTES']) ?>"><br><br>
-                                        <label for="disponibilidad">Modifica la disponibilidad de la vacante</label><br>
+                                        
+                                        <label for="disponibilidad">Modifica la disponibilidad del anuncio</label><br>
                                         <select name="disponibilidad" id="disponibilidad">
                                             <option value="1" <?php echo ($vacante['DISPONIBILIDAD'] == 1) ? 'selected' : '' ?>>Disponible</option>
                                             <option value="0" <?php echo ($vacante['DISPONIBILIDAD'] == 0) ? 'selected' : '' ?>>No disponible</option>
@@ -50,7 +49,7 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
                                         <input type="file" class="form-control-file" id="FILE" name="img">
                                     </div>
                                 <?php include("./Controlador/modificar_bolsa_trabajo.php"); ?>
-                                    <input type="submit" class="btn btn-success" style="width: 60%;" value="MODIFICAR" name="modificar_panel_noticia">
+                                    <input type="submit" class="btn btn-primary" style="width: 60%;" value="MODIFICAR" name="modificar_panel_noticia">
                                     <br></br>
                                     <a href="./admon_administrar_bolsa_trabajo.php"> <input class="btn btn-success" style="width: 60%;" type="button" value="REGRESAR"></a>
                             </div>

@@ -21,7 +21,7 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
     <div class="card text-center" style="height:100%; position:relative;left:0%">
         <br>
         <div class="card-body">
-            <a href="./admon_administrar_bolsa_trabajo_registrar_trabajo.php" class="btn btn-success" style="width: 60%;">Agregar nueva vacante</a>
+            <a href="./admon_administrar_bolsa_trabajo_registrar_trabajo.php" class="btn btn-success" style="width: 60%;">Agregar nuevo anuncio</a>
             <br><br>
             <div class="card">
                 <h5 class="card-header">IMAGENES Y ELEMENTOS QUE SE MUESTRAN EN EL PANEL BOLSA DE TRABAJO </h5>
@@ -63,11 +63,11 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
                                                 <?php echo $k->dec($datos['FECHA_PUBLICACION']); ?>
                                             </td>
                                             <td>
-                                                <?php echo ($datos['DISPONIBILIDAD'] == 1) ? 'VACANTE DISPONIBLE' : 'VACANTE NO DISPONIBLE'?>
+                                                <?php echo ($datos['DISPONIBILIDAD'] == 1) ? 'ANUNCIO DISPONIBLE' : 'ANUNCIO NO DISPONIBLE'?>
                                             </td>
                                             <td>
                                             <a class="btn btn-primary" href="./admon_administrar_bolsa_trabajo_modificar_trabajo.php?id=<?php echo ($datos["ID"]) ?>&u=<?php echo $k->enc($_SESSION["admin_ecotec"]) ?>" style="width:210px ;">MODIFICAR</a><br><br>
-                                                <a class="btn btn-danger" onClick="return confirm('Confirmar eliminación')" href="./Controlador/eliminar_vacante.php?id=<?php echo ($datos["ID"]) ?>&u=<?php echo $k->enc($_SESSION["admin_ecotec"]) ?>" style="width:210px ;">ELIMINAR</a>
+                                            <a class="btn btn-danger" onClick="return confirm('Confirmar eliminación')" href="./Controlador/eliminar_vacante.php?id=<?php echo ($datos["ID"]) ?>&u=<?php echo $k->enc($_SESSION["admin_ecotec"]) ?>" style="width:210px ;">ELIMINAR</a>
                                             </td>
                                         </tr>
                                 <?php

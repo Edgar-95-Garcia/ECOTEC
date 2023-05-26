@@ -20,11 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         //verificar las variables de los campos que son obligatorios ----------------------------------------
         if (empty($titulo)) {
-            echo "<p style='color:red'>*Ingresa el titulo de la vacante</p>";
+            echo "<p style='color:red'>*Ingresa el titulo del anuncio</p>";
             $flag = false;
         }
         if (empty($descripcion)) {
-            echo "<p style='color:red'>*Ingresa la descripcion de la vacante</p>";
+            echo "<p style='color:red'>*Ingresa la descripcion del anuncio</p>";
             $flag = false;
         }
 
@@ -34,14 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $insertar = new Insertar_trabajo();
             $a = $insertar->add_trabajo($titulo,$descripcion,$binariosImagen);
             if ($a == 1) {
-                echo '<script type="text/javascript">alert("Vacante registrada exitosamente");</script>';
+                echo '<script type="text/javascript">alert("Anuncio registrado exitosamente");</script>';
 ?>
                 <script>
                     window.location.replace("admon_administrar_bolsa_trabajo.php");
                 </script>
 <?php
             } elseif ($a == 0) {
-                echo '<script type="text/javascript">alert("Vacante no registrada, por favor intente en unos minutos");</script>';
+                echo '<script type="text/javascript">alert("Anuncio no registrado, por favor intente en unos minutos");</script>';
             }
         } else {
             echo '<script type="text/javascript">alert("¡Por favor revisa los datos ingresados!");</script>';
