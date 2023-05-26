@@ -4,13 +4,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $temp = 2; //bandera que permite llevar un control de validaciones del formulario (se verifica que no existan campos vacios)
     if ($_POST["aceptar"] == "Ingresar") {
         if (isset($_POST["c_u"])) {
-            $correo = htmlentities(strtolower($_POST["c_u"]));
+            $matricula = htmlentities(($_POST["c_u"]));
         }
         if (isset($_POST["con"])) {
             $pass = htmlentities($_POST["con"]);
         }
     }
-    if (empty($correo)) {
+    if (empty($matricula)) {
         echo "<p style='color:red'>*Ingresa tu Matricula</p>";
         $flag = false;
     } else {
@@ -27,15 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mysql_object = new conect();
         include_once("./Modelo/Usuarios/Consultar_usuario.php");
         $consultar = new Consultar_usuario();
-        $val =  intval(($consultar->selectUserUserName($correo, $pass)));
+        $val =  intval(($consultar->selectUserUserName($matricula, $pass)));
         if ($val == 4) {
             //cuenta no está activada
             echo "<p style='color:red'>*Activa tu cuenta, revisa tu correo electrónico</p><br>";
         } else if ($val == 3) {
             //ingresa usuario ADMINISTRADOR de sitio
-            $actual_session = md5($correo);
+            $actual_session = md5($matricula);
             $_SESSION["user_ecotec"] = $actual_session;
-            $_SESSION["nombre_ecotec"] = $consultar->selectNameUserName($correo);
+            $_SESSION["nombre_ecotec"] = $consultar->selectNameUserName($matricula);
             $_SESSION["admin_ecotec"] = "ecotec";
 ?>
             <script>
@@ -47,10 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             #include_once("");
         } else if ($val == 1) {
             //ingresa usuario NORMAL (alumno)
-            $actual_session = md5($correo);
+            $actual_session = md5($matricula);
             $_SESSION["user"] = $actual_session;
-            $_SESSION["nombre"] = $consultar->selectNameUserName($correo);
-            $_SESSION["id"] = $consultar->selectUserIDFromCorreo($correo);
+            $_SESSION["nombre"] = $consultar->selectNameUserName($matricula);
+            $_SESSION["id"] = $consultar->selectUserIDFromCorreo($matricula);
         ?>
             <script>
                 window.location.replace("./index.php");
@@ -58,11 +58,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php
         } else if ($val == 0) {
             //ingresa usuario PROFESOR
-            $actual_session = md5($correo);
+            $actual_session = md5($matricula);
             $_SESSION["user"] = $actual_session;
-            $_SESSION["nombre"] = $consultar->selectNameUserName($correo);
+            $_SESSION["nombre"] = $consultar->selectNameUserName($matricula);
             $_SESSION["admin"] = "admin";
-            $_SESSION["id"] = $consultar->selectUserIDFromCorreo($correo);
+            $_SESSION["id"] = $consultar->selectUserIDFromCorreo($matricula);
         ?>
             <script>
                 window.location.replace("./administrar_talleres.php");

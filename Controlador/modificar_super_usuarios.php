@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['admin_ecotec'])) {
     if (isset($_POST["modificar_super_usuario"]) == "ACTUALIZAR") {
 
         if (isset($_POST["correo"])) {
-            $correo = htmlentities(strtolower($_POST["correo"]));
+            $matricula = htmlentities(strtolower($_POST["correo"]));
         }
         if (isset($_POST["password"])) {
             $contraseña = htmlentities($_POST["password"]);
@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['admin_ecotec'])) {
         $id_super_usuario = htmlentities($_POST["id_super_usuario"]);
         //verificar las variables de los campos que son obligatorios ----------------------------------------
 
-        if (empty($correo)) {
-            echo "<p style='color:red'>*Ingresa correo</p>";
+        if (empty($matricula)) {
+            echo "<p style='color:red'>*Ingresa matricula</p>";
             $flag = false;
         }
         if (empty($contraseña)) {
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['admin_ecotec'])) {
         if ($flag == true) {
             include_once("./Modelo/Usuarios/Modificar_usuario.php");
             $modificar = new Modificar_usuario();
-            $a = $modificar->updateSuperUser($correo, $contraseña, $id_super_usuario);
+            $a = $modificar->updateSuperUser($matricula, $contraseña, $id_super_usuario);
             if ($a == 1) {
                 echo '<script type="text/javascript">alert("Datos de super usuario modificados");</script>';
 ?>

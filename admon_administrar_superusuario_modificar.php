@@ -27,7 +27,7 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
             <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
                 <?php foreach ($datos_superusuario as $super_usuario) { ?>
                     <input type="hidden" name="id_super_usuario" value="<?php echo ($super_usuario['ID_USUARIO']) ?>">
-                    CORREO<br><br><input name="correo" type="text" value="<?php echo $k->dec($super_usuario['CORREO']) ?>"> <br><br>
+                    MATRICULA<br><br><input name="correo" type="text" value="<?php echo $k->dec($super_usuario['MATRICULA']) ?>"> <br><br>
                     CONTRASEÑA<br><br><input name="password" type="text" value="<?php echo $k->dec($super_usuario['PASS']) ?>"> <br><br>
                     <?php include("./Controlador/modificar_super_usuarios.php"); ?>
                     <br><br>

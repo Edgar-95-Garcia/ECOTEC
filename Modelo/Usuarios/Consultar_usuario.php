@@ -85,13 +85,13 @@ class Consultar_usuario
         return $result;
     }
 
-    function selectUsersCorreo($correo)
+    function selectUsersCorreo($MATRICULA)
     {
         try {
             $result = "";
             require_once("./Modelo/conect.php");
             $c = new conect("aeroline_user", ".+X?pZZ+E9hU");
-            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE CORREO = '" . $correo . "'");
+            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE MATRICULA = '" . $MATRICULA . "'");
             $stmt->execute();
             $result = $stmt->fetchAll();
         } catch (PDOException $e) {
@@ -113,14 +113,14 @@ class Consultar_usuario
         }
         return $result;
     }
-    function selectUser($CORREO, $HASH)
+    function selectUser($MATRICULA, $HASH)
     {
         $coincidencia = 0;
         try {
             require_once("../Modelo/conect.php");
             $c = new conect("aeroline_user", ".+X?pZZ+E9hU");
-            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE HASH = ? AND CORREO = ?");
-            $stmt->execute(array($HASH, $CORREO));
+            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE HASH = ? AND MATRICULA = ?");
+            $stmt->execute(array($HASH, $MATRICULA));
             foreach ($stmt as $v) {
                 $coincidencia++;
             }
@@ -129,13 +129,13 @@ class Consultar_usuario
         }
         return $coincidencia;
     }
-    function selectUserCorreo($CORREO, $PASS)
+    function selectUserCorreo($MATRICULA, $PASS)
     {
         $coincidencia = 0;
         try {
             require_once("../Modelo/conect.php");
             $c = new conect("aeroline_user", ".+X?pZZ+E9hU");
-            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE CORREO = ? AND PASS = ?");
+            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE MATRICULA = ? AND PASS = ?");
             $stmt->execute(array($HASH));
             foreach ($stmt as $v) {
                 $coincidencia++;
@@ -146,7 +146,7 @@ class Consultar_usuario
         return $coincidencia;
     }
 
-    function selectNameUserName($CORREO)
+    function selectNameUserName($MATRICULA)
     {
         try {
             require_once("./Modelo/conect.php");
@@ -154,8 +154,8 @@ class Consultar_usuario
             include_once("./Controlador/key.php");
             $k = new key();
             $nombre = "";
-            $stmt = $c->connect()->prepare("SELECT NOMBRES FROM usuarios WHERE CORREO = ?");
-            $stmt->execute(array(strval($k->enc($CORREO))));
+            $stmt = $c->connect()->prepare("SELECT NOMBRES FROM usuarios WHERE MATRICULA = ?");
+            $stmt->execute(array(strval($k->enc($MATRICULA))));
             foreach ($stmt as $v) {
                 $nombre = $v['NOMBRES'];
             }
@@ -165,7 +165,7 @@ class Consultar_usuario
         return $k->dec($nombre);
     }
 
-    function selectUserUserName($CORREO, $PASS)
+    function selectUserUserName($MATRICULA, $PASS)
     {
         $coincidencia = 0;
         try {
@@ -173,8 +173,8 @@ class Consultar_usuario
             $c = new conect();
             include_once("./Controlador/key.php");
             $k = new key();
-            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE MATRICUA = ? AND PASS = ?");
-            $stmt->execute(array(strval($k->enc($CORREO)), strval($k->enc($PASS))));
+            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE MATRICULA = ? AND PASS = ?");
+            $stmt->execute(array(strval($k->enc($MATRICULA)), strval($k->enc($PASS))));
             $status = 0;
             $level = null;
             $tmp = 0;
@@ -205,8 +205,6 @@ class Consultar_usuario
                 } elseif ($status == 1 && $level == 1 &&  $tmp > 0) {
                     $coincidencia = 1; #USUARIO EXISTE Y TIENE NIVEL 1
                     //$auditoria->inicio_sesion($id);
-                } else {
-                    $coincidencia = 5;
                 }
             }
         } catch (PDOException $e) {
@@ -217,7 +215,7 @@ class Consultar_usuario
 
 
 
-    function selectUserIDFromCorreo($CORREO)
+    function selectUserIDFromCorreo($MATRICULA)
     {
         try {
             require_once("./Modelo/conect.php");
@@ -225,8 +223,8 @@ class Consultar_usuario
             include_once("./Controlador/key.php");
             $k = new key();
             $nombre = "";
-            $stmt = $c->connect()->prepare("SELECT ID_USUARIO FROM usuarios WHERE CORREO = ?");
-            $stmt->execute(array(strval($k->enc($CORREO))));
+            $stmt = $c->connect()->prepare("SELECT ID_USUARIO FROM usuarios WHERE MATRICULA = ?");
+            $stmt->execute(array(strval($k->enc($MATRICULA))));
             $datos = $stmt->fetchAll();
             foreach ($datos as $d) {
                 $nombre = $d['ID_USUARIO'];

@@ -53,7 +53,7 @@ class Modificar_usuario
             include_once("./Controlador/key.php");
             $k = new key();
             $coincidencia = 0;
-            $stmt = $c->connect()->prepare("UPDATE usuarios SET CORREO ='" . $k->enc($correo) . "' ,PASS = '" . $k->enc($pass) . "' WHERE ID_USUARIO = '" . $id_usuario . "' AND LEVEL = 3");
+            $stmt = $c->connect()->prepare("UPDATE usuarios SET MATRICULA ='" . $k->enc($correo) . "' ,PASS = '" . $k->enc($pass) . "' WHERE ID_USUARIO = '" . $id_usuario . "' AND LEVEL = 3");
             $stmt->execute();
             if ($stmt->rowCount() > 0) {
                 $coincidencia = 1;
