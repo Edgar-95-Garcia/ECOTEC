@@ -20,7 +20,7 @@ if (isset($_SESSION['user']) != null) {
                 <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
                     <h2 class="card-title">Iniciar Sesión</h2>
                     <p class="card-text">
-                        <br><br><input name="c_u" type="text" placeholder="Correo" style="width: 25%; text-align:center"> <br>
+                        <br><br><input name="c_u" type="text" placeholder="Matricula" style="width: 25%; text-align:center"> <br>
                         <br><br><input name="con" type="password" placeholder="Contraseña" style="width: 25%; text-align:center"> <br><br>
                         <br><br>
                         <?php include_once("./Controlador/ingreso_usuarios.php"); ?>

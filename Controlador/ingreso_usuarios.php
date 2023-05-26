@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     if (empty($correo)) {
-        echo "<p style='color:red'>*Ingresa tu correo</p>";
+        echo "<p style='color:red'>*Ingresa tu Matricula</p>";
         $flag = false;
     } else {
         $temp--;
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
         } else if ($val == 5) {
             //usuario no existe o credenciales son incorrectas
-            echo "<p style='color:red'>*El correo o contraseña son incorrectos</p><br>";
+            echo "<p style='color:red'>*Matricula o contraseña incorrectos</p><br>";
         }
     }
 }

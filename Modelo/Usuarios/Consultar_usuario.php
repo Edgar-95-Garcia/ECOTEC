@@ -173,7 +173,7 @@ class Consultar_usuario
             $c = new conect();
             include_once("./Controlador/key.php");
             $k = new key();
-            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE CORREO = ? AND PASS = ?");
+            $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE MATRICUA = ? AND PASS = ?");
             $stmt->execute(array(strval($k->enc($CORREO)), strval($k->enc($PASS))));
             $status = 0;
             $level = null;
