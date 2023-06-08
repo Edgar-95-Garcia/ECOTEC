@@ -92,7 +92,7 @@ if (!isset($GLOBALS['menu'])) {
                 <?php
                 if (isset($_SESSION["admin_ecotec"])) {
                 ?>
-                    <li class="nav-item">
+                    <li class="nav-item <?php if ($GLOBALS['menu'] == 'RIDE') echo 'active'; ?>">
                         <a class="nav-link" aling="center" href="./RIDEECOTEC.php">RideEcotec</a>
                     </li>
                 <?php
@@ -136,7 +136,9 @@ if (!isset($GLOBALS['menu'])) {
                             <a class="dropdown-item" aling="center" href="./admon_administrar_noticias_panel.php">Panel de noticias</a>
                             <a class="dropdown-item" aling="center" href="./admon_administrar_noticias.php">Banner de noticias</a>
                             <a class="dropdown-item" aling="center" href="./admon_administrar_apariencia.php">Apariencia de página</a>
-                            <a class="dropdown-item" aling="center" href="./admon_administrar_tabla_inicio.php">Tabla inicio</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_tabla_inicio.php">Tabla Inicio</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_tabla_inicio_ecoride.php">Tabla Ecoride</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_tabla_inicio_anunciatec.php">Tabla AnunciaTec</a>
                         </div>
                     </li>
                 <?php

@@ -1,5 +1,5 @@
 <?php
-class Modificar_inicio_ecoride
+class Modificar_inicio_anunciatec
 {
     #-------------------------------------------------------------------------------------------------------
     

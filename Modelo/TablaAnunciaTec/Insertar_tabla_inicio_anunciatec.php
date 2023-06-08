@@ -1,6 +1,6 @@
 <?php
 
-class Insertar_tabla_inicio_ecoride
+class Insertar_tabla_inicio_anunciatec
 {
     function add_tabla_inicio($titulo, $texto, $imagen)
     {
@@ -11,7 +11,7 @@ class Insertar_tabla_inicio_ecoride
             $data = array(null, $k->enc($imagen), $k->enc($titulo), $k->enc($texto));
             include_once("./Modelo/conect.php");
             $mysql_object = new conect();
-            $statementHandle = $mysql_object->connect()->prepare("INSERT INTO rideecotec_tabla(ID, IMAGEN, TITULO, TEXTO) VALUES (?,?,?,?)");
+            $statementHandle = $mysql_object->connect()->prepare("INSERT INTO anuncitec_tabla(ID, IMAGEN, TITULO, TEXTO) VALUES (?,?,?,?)");
             $statementHandle->execute($data);
             $temp = 1; #todo ha sido correcto
         } catch (PDOException $e) {
