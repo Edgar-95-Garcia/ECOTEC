@@ -136,6 +136,7 @@ if (!isset($GLOBALS['menu'])) {
                             <a class="dropdown-item" aling="center" href="./admon_administrar_noticias_panel.php">Panel de noticias</a>
                             <a class="dropdown-item" aling="center" href="./admon_administrar_noticias.php">Banner de noticias</a>
                             <a class="dropdown-item" aling="center" href="./admon_administrar_apariencia.php">Apariencia de página</a>
+                            <a class="dropdown-item" aling="center" href="./admon_administrar_tabla_inicio.php">Tabla inicio</a>
                         </div>
                     </li>
                 <?php

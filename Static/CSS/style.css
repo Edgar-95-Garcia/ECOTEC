@@ -165,3 +165,12 @@ h1 {
     object-fit: cover;
     /* Ajusta la imagen para que cubra todo el espacio sin distorsión */
 }
+
+.card-table-top {
+    width: 50%;
+    /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: 175px;
+    /* Establece una altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Ajusta la imagen para que cubra todo el espacio sin distorsión */
+}
