@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     include_once("./Modelo/Usuarios/Insertar_usuario.php");
                     $insertar = new Insertar_usuario();
 
-                    $a = $insertar->addUserAdmin($nombres, $apellido_paterno, $apellido_materno, "", $telcontact, strtolower($correo), $contraseña);
+                    $a = $insertar->addUserAdmin($nombres, $apellido_paterno, $apellido_materno, $correo, $telcontact, $contraseña);
                     if ($a == 1) {
                         echo '<script type="text/javascript">alert("Registro exitoso, revisa tu correo para activar tu cuenta (NO ENVIA CORREO AUN)");</script>';
                     } else if ($a == 2) {

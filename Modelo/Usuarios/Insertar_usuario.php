@@ -34,7 +34,7 @@ class Insertar_usuario
         return $temp;
     }
 
-    function addUserAdmin($nombres, $a_p, $a_m, $matricula, $tel_contacto, $pass)
+    function addUserAdmin($nombres, $a_p, $a_m, $correo, $tel_contacto, $pass)
     {
         include_once("./Controlador/key.php");
         $k = new key();
@@ -53,8 +53,8 @@ class Insertar_usuario
         2 = Usuario supervisor (se realiza registro en archivo "register_admin.php")
         */
         $hash = (md5(rand(0, 1000)));
-        $to = $correo;
-        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), null, $k->enc($tel_contacto), $k->enc($pass), $k->enc($hash), 1, 0, $k->enc($fecha));
+        //$to = $correo;
+        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), $k->enc($correo), $k->enc($tel_contacto), $k->enc($pass), $k->enc($hash), 1, 0, $k->enc($fecha));
         /* 
         if ($this->mensaje_activacion($user, $correo, $k, $hash, $to) != 1) {
             //correo no envíado, no se realiza registro en base de datos

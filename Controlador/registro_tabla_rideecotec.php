@@ -32,14 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //se verifica que todos los datos hayan sido ingresados correctamente y por lo tanto que la bandera sea TRUE
         if ($flag == true) {
-            include_once("./Modelo/TablaAnunciaTec/Insertar_tabla_inicio_anunciatec.php");
-            $insertar = new Insertar_tabla_inicio_anunciatec();
+            include_once("./Modelo/TablaEcoride/Insertar_tabla_inicio_ecoride.php");
+            $insertar = new Insertar_tabla_inicio_ecoride();
             $a = $insertar->add_tabla_inicio($titulo, $textArea, $binariosImagen);
             if ($a == 1) {
                 echo '<script type="text/javascript">alert("Registro exitoso");</script>';
 ?>
                 <script>
-                    window.location.replace("admon_administrar_tabla_inicio_anunciatec.php");
+                    window.location.replace("admon_administrar_tabla_inicio_ecoride.php");
                 </script>
 <?php
             } elseif ($a == 0) {
