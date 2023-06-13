@@ -90,7 +90,7 @@ class Consultar_usuario
         try {
             $result = "";
             require_once("./Modelo/conect.php");
-            $c = new conect("aeroline_user", ".+X?pZZ+E9hU");
+            $c = new conect();
             $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE MATRICULA = '" . $MATRICULA . "'");
             $stmt->execute();
             $result = $stmt->fetchAll();
@@ -104,7 +104,7 @@ class Consultar_usuario
         try {
             $result = "";
             require_once("./Modelo/conect.php");
-            $c = new conect("aeroline_user", ".+X?pZZ+E9hU");
+            $c = new conect();
             $stmt = $c->connect()->prepare("SELECT * FROM usuarios");
             $stmt->execute();
             $result = $stmt->fetchAll();
@@ -118,7 +118,7 @@ class Consultar_usuario
         $coincidencia = 0;
         try {
             require_once("../Modelo/conect.php");
-            $c = new conect("aeroline_user", ".+X?pZZ+E9hU");
+            $c = new conect();
             $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE HASH = ? AND MATRICULA = ?");
             $stmt->execute(array($HASH, $MATRICULA));
             foreach ($stmt as $v) {
@@ -134,7 +134,7 @@ class Consultar_usuario
         $coincidencia = 0;
         try {
             require_once("../Modelo/conect.php");
-            $c = new conect("aeroline_user", ".+X?pZZ+E9hU");
+            $c = new conect();
             $stmt = $c->connect()->prepare("SELECT * FROM usuarios WHERE MATRICULA = ? AND PASS = ?");
             $stmt->execute(array($HASH));
             foreach ($stmt as $v) {

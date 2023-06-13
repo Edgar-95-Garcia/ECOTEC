@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $tmp_name_img = $_FILES['img']['tmp_name'];
                 $data = file_get_contents($tmp_name_img);
                 $binariosImagen = base64_encode($data);
-                $id_taller = $_POST["id_taller"];
             }
         } else {
             echo "<p style='color:red'>*Ingresa una imagen</p>";

@@ -22,7 +22,7 @@ class Insertar_usuario
         */
         $hash = (md5(rand(0, 1000)));
         $to = $correo;
-        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), $k->enc($matricula), $k->enc($tel_contacto), $k->enc($pass), $k->enc($hash), 1, 1, $k->enc($fecha));
+        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), $k->enc($matricula), $k->enc($matricula), $k->enc($tel_contacto), $k->enc($pass), $k->enc($hash), 1, 1, $k->enc($fecha));
         /* 
         if ($this->mensaje_activacion($user, $correo, $k, $hash, $to) != 1) {
             //correo no envíado, no se realiza registro en base de datos
@@ -54,7 +54,7 @@ class Insertar_usuario
         */
         $hash = (md5(rand(0, 1000)));
         //$to = $correo;
-        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), $k->enc($correo), $k->enc($tel_contacto), $k->enc($pass), $k->enc($hash), 1, 0, $k->enc($fecha));
+        $data = array(null, $k->enc($nombres), $k->enc($a_p), $k->enc($a_m), $k->enc($correo), $k->enc($correo), $k->enc($tel_contacto), $k->enc($pass), $k->enc($hash), 1, 0, $k->enc($fecha));
         /* 
         if ($this->mensaje_activacion($user, $correo, $k, $hash, $to) != 1) {
             //correo no envíado, no se realiza registro en base de datos
@@ -100,7 +100,7 @@ class Insertar_usuario
             
             $repetidos = null;
             if ($repetidos == null) {
-                $statementHandle = $mysql_object->connect()->prepare("INSERT INTO usuarios(ID_USUARIO, NOMBRES, APELLIDO_PATERNO, APELLIDO_MATERNO, MATRICULA, TEL_CONTACTO, PASS, HASH, STATUS, LEVEL,FECHA_REGISTRO) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+                $statementHandle = $mysql_object->connect()->prepare("INSERT INTO usuarios(ID_USUARIO, NOMBRES, APELLIDO_PATERNO, APELLIDO_MATERNO, CORREO, MATRICULA, TEL_CONTACTO, PASS, HASH, STATUS, LEVEL,FECHA_REGISTRO) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
                 $statementHandle->execute($data);                
                 $temp = 1; #todo ha sido correcto
             } else {
