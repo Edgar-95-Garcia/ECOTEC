@@ -14,13 +14,21 @@ class Modificar_taller
             $c = new conect();
             include_once("./Controlador/key.php");
             $k = new key();
-            $coincidencia = 0;
-            $stmt = $c->connect()->prepare("UPDATE talleres SET ID_PROFESOR = '" . $id_profesor . "', NOMBRE = '" . $k->enc($nombre) . "' ,LUNES = '" . $k->enc($lunes) . "' ,MARTES = '" . $k->enc($martes) . "' ,MIERCOLES='" . $k->enc($miercoles) . "' ,JUEVES = '" . $k->enc($jueves) . "' ,VIERNES ='" . $k->enc($viernes) . "' ,SABADO = '" . $k->enc($sabado) . "' ,DOMINGO = '" . $k->enc($domingo) . "',CLAVE = '" . $k->enc($clave) . "' ,DESCRIPCION = '" . $k->enc($descripcion) . "' ,SALON = '" . $k->enc($salon) . "' ,CUPO = '" . $cupo . "' ,DEPARTAMENTO = '" . $k->enc($departamento) . "', STATUS = '" . $status . "' WHERE ID_TALLER='" . $id_taller . "'");
+            $stmt = $c->connect()->prepare("SELECT CUPO from talleres WHERE ID_TALLER='" . $id_taller . "'");
             $stmt->execute();
-            if ($stmt->rowCount() > 0) {
-                $coincidencia = 1;
-            } else {
+            $lugares_disponibles = $stmt->fetchAll();
+            if ($cupo < (int) $lugares_disponibles[0][0]) {
                 $coincidencia = 0;
+            } else {
+                $nuevos_lugares_disponibles = (int) $cupo - (int) $lugares_disponibles[0][0];
+                $coincidencia = 0;
+                $stmt = $c->connect()->prepare("UPDATE talleres SET ID_PROFESOR = '" . $id_profesor . "', NOMBRE = '" . $k->enc($nombre) . "' ,LUNES = '" . $k->enc($lunes) . "' ,MARTES = '" . $k->enc($martes) . "' ,MIERCOLES='" . $k->enc($miercoles) . "' ,JUEVES = '" . $k->enc($jueves) . "' ,VIERNES ='" . $k->enc($viernes) . "' ,SABADO = '" . $k->enc($sabado) . "' ,DOMINGO = '" . $k->enc($domingo) . "',CLAVE = '" . $k->enc($clave) . "' ,DESCRIPCION = '" . $k->enc($descripcion) . "' ,SALON = '" . $k->enc($salon) . "' ,CUPO = '" . $cupo . "' ,DEPARTAMENTO = '" . $k->enc($departamento) . "', STATUS = '" . $status . "', LUGARES_DISPONIBLES = '" . $nuevos_lugares_disponibles . "' WHERE ID_TALLER='" . $id_taller . "'");
+                $stmt->execute();
+                if ($stmt->rowCount() > 0) {
+                    $coincidencia = 1;
+                } else {
+                    $coincidencia = 0;
+                }
             }
         } catch (PDOException $e) {
             $coincidencia = 0;

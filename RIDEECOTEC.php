@@ -13,7 +13,7 @@ $auxiliar = 0;
 <div style="width:80%; position: relative; left:10%">
     <table class="table table-bordered table-hover">
         <tbody>
-            
+             
                 <?php 
                 foreach($datos_tabla as $tabla){
                     if($auxiliar % 2 == 0){

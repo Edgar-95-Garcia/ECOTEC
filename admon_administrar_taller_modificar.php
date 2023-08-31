@@ -45,18 +45,18 @@ if (isset($_SESSION["admin_ecotec"]) == null) {
                                             NOMBRE TALLER<br><br><input name="nombre_taller" type="text" value="<?php echo $k->dec($d['NOMBRE']); ?>"> <br><br>
                                             <hr>
                                             HORARIO Y DÍA EN QUE SE VA A IMPARTIR EL TALLER <br><br>
-                                            LUNES <input name="lunes" type="text" value="<?php echo $k->dec($d['LUNES']); ?>"> <br><br>
-                                            MARTES <input name="martes" type="text" value="<?php echo $k->dec($d['MARTES']); ?>"> <br><br>
-                                            MIERCOLES <input name="miercoles" type="text" value="<?php echo $k->dec($d['MIERCOLES']); ?>"> <br><br>
-                                            JUEVES <input name="jueves" type="text" value="<?php echo $k->dec($d['JUEVES']); ?>"> <br><br>
-                                            VIERNES <input name="viernes" type="text" value="<?php echo $k->dec($d['VIERNES']); ?>"> <br><br>
-                                            SABADO <input name="sabado" type="text" value="<?php echo $k->dec($d['SABADO']); ?>"> <br><br>
-                                            DOMINGO <input name="domingo" type="text" value="<?php echo $k->dec($d['DOMINGO']); ?>"> <br><br>
-                                            CLAVE DEL TALLER <br><br><input name="clave" type="text" value="<?php echo $k->dec($d['CLAVE']); ?>"> <br><br>
-                                            DESCRIPCIÓN TALLER<br><br><br><input name="descripcion" type="text" value="<?php echo $k->dec($d['DESCRIPCION']); ?>"> <br><br>
-                                            SALON EN EL QUE SE IMPARTIRA EL TALLER <br><br><br><input name="salon" type="text" value="<?php echo $k->dec($d['SALON']); ?>"> <br><br>
-                                            CUPO DEL TALLER<br><br><input name="cupo" type="text" value="<?php echo ($d['CUPO']); ?>"><br><br>
-                                            DEPARTAMENTO DEL TALLER<br><br><input name="departamento" type="text" value="<?php echo $k->dec($d['DEPARTAMENTO']); ?>"><br><br>
+                                            LUNES <input name="lunes" type="text" value="<?php echo isset($d['LUNES']) ? $k->dec($d['LUNES']) : ''; ?>"> <br><br>
+                                            MARTES <input name="martes" type="text" value="<?php echo isset($d['MARTES']) ? $k->dec($d['MARTES']) : ''; ?>"> <br><br>
+                                            MIERCOLES <input name="miercoles" type="text" value="<?php echo isset($d['MIERCOLES']) ? $k->dec($d['MIERCOLES']) : ''; ?>"> <br><br>
+                                            JUEVES <input name="jueves" type="text" value="<?php echo isset($d['JUEVES']) ? $k->dec($d['JUEVES']) : ''; ?>"> <br><br>
+                                            VIERNES <input name="viernes" type="text" value="<?php echo isset($d['VIERNES']) ? $k->dec($d['VIERNES']) : ''; ?>"> <br><br>
+                                            SABADO <input name="sabado" type="text" value="<?php echo isset($d['SABADO']) ? $k->dec($d['SABADO']) : ''; ?>"> <br><br>
+                                            DOMINGO <input name="domingo" type="text" value="<?php echo isset($d['DOMINGO']) ? $k->dec($d['DOMINGO']) : ''; ?>"> <br><br>
+                                            CLAVE DEL TALLER <br><br><input name="clave" type="text" value="<?php echo isset($d['CLAVE']) ? $k->dec($d['CLAVE']): ''; ?>"> <br><br>
+                                            DESCRIPCIÓN TALLER<br><br><br><input name="descripcion" type="text" value="<?php echo isset($d['DESCRIPCION']) ? $k->dec($d['DESCRIPCION']) : ''; ?>"> <br><br>
+                                            SALON EN EL QUE SE IMPARTIRA EL TALLER <br><br><br><input name="salon" type="text" value="<?php echo isset($d['SALON']) ? $k->dec($d['SALON']) : ''; ?>"> <br><br>
+                                            CUPO DEL TALLER<br><br><input name="cupo" type="text" value="<?php echo isset($d['CUPO']) ? ($d['CUPO']) : ''; ?>"><br><br>
+                                            DEPARTAMENTO DEL TALLER<br><br><input name="departamento" type="text" value="<?php echo isset($d['DEPARTAMENTO']) ?  $k->dec($d['DEPARTAMENTO']) : ''; ?>"><br><br>
                                             ESTATUS DEL TALLER <br><br><input name="status" type="text" value="<?php echo $d['STATUS'] == 1 ? 'Activo' : 'Inactivo';  ?>"><br><br>
                                             <hr>
                                             <?php
