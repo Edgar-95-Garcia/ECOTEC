@@ -78,7 +78,7 @@ class Consultar_taller
             $result = "";
             require_once("./Modelo/conect.php");
             $c = new conect();
-            $stmt = $c->connect()->prepare("SELECT * FROM talleres WHERE EXISTS (SELECT NULL FROM alumno_has_taller where talleres.ID_TALLER=alumno_has_taller.ID_TALLER AND alumno_has_taller.ID_ALUMNO = '" . $alumno . "') AND STATUS = 1 AND LUGARES_DISPONIBLES >=1");
+            $stmt = $c->connect()->prepare("SELECT * FROM talleres WHERE EXISTS (SELECT NULL FROM alumno_has_taller where talleres.ID_TALLER=alumno_has_taller.ID_TALLER AND alumno_has_taller.ID_ALUMNO = '" . $alumno . "') AND STATUS = 1");
             $stmt->execute();
             $result = $stmt->fetchAll();
         } catch (PDOException $e) {
